@@ -10,11 +10,22 @@
           <a href="#" id="save" class="btn primary">Save</a> |
           <a href="#" class="btn success" id="export_md">Export Markdown</a> |
           <a href="#" class="btn success" id="export_html">Export HTML</a> |
-          <span class="relative">
-            <img src="/img/icon_octocat_20x20.png" class="icon_octocat" alt="Octocat Icon"><% if(!loggedIn){ %>
-            <a href="https://github.com/login/oauth/authorize?client_id=<%- github.client_id %>&scope=repo&redirect_uri=<%- github.callback_url %>" id="oauth_github" class="btn github">Sign in With Github</a><% }%><% if(loggedIn){ %>
-            <a href="#" id="github_profile" class="btn github" data-controls-modal="modal-generic" data-backdrop="static" data-keyboard="true" data-github-user="<%= github.username %>">Import from Repo</a><% }%>
-          </span>
+          <% if(!loggedIn){ %>
+          <a href="https://github.com/login/oauth/authorize?
+                                                  client_id=<%-github.client_id %>&
+                                                  scope=repo&
+                                                  redirect_uri=<%- github.callback_url %>"
+             id="oauth_github" class="btn github">
+            <img src="/img/icon_octocat_20x20.png" class="octocat_icon" alt="Octocat Icon"/>
+            <span>Sign in With Github</span>
+          <% }%>
+          <% if(loggedIn){ %>
+          <a href="#" id="github_profile" class="btn github" data-controls-modal="modal-generic"
+           data-backdrop="static" data-keyboard="true" data-github-user="<%= github.username%>">
+            <img src="/img/icon_octocat_20x20.png" class="octocat_icon" alt="Octocat Icon"/>
+            <span>Import from Repo</span>
+          <% }%>
+          </a>
           <select id="theme">
             <option value="ace/theme/clouds">Clouds</option>
             <option value="ace/theme/clouds_midnight">Clouds Midnight</option>
