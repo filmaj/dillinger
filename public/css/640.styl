@@ -1,4 +1,4 @@
-@media screen and (max-width: 640px)
+@media screen and (min-width: 481px) and (max-width: 640px)
 
   header
     font-size 0.75em
@@ -7,8 +7,15 @@
     display none
 
   #editor
-    left 0px
+    left 0px !important
 
-  .ace-clouds-midnight .ace_gutter
-    width 35px
+  .ace_editor .ace_gutter
+    width 30px !important
+    font-size 11px !important
+
+  .ace_gutter-layer .ace_gutter-cell
+    padding-right 4px !important
+
+  nav
+    padding 6px 10px 6px 12px !important
 /* Add some custom 640 stuff here */
